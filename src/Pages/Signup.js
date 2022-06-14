@@ -1,11 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const Signup = () => {
 
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
         const userEmail = data.email
@@ -13,23 +14,19 @@ const Signup = () => {
         const userPassword = data.password
 
 
-        const userData = {
+        axios.post('http://localhost:5000/signup', {
             email: userEmail,
             phoneNumber: userPhoneNumber,
             password: userPassword
-        }
-
-        fetch('http://localhost:5000/signup', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(userData)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+            .then(function (response) {
+                console.log(response)
+                reset()
             })
+            .catch(function (error) {
+                console.log(error)
+            })
+
     }
 
 
