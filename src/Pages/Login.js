@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -10,22 +11,34 @@ const Login = () => {
         const userEmail = data.email
         const userPassword = data.password
 
-        const userData = {
+        // const userData = {
+        //     email: userEmail,
+        //     password: userPassword
+        // }
+
+        // fetch('http://localhost:5000/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json',
+        //     },
+        //     body: JSON.stringify(userData)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //     })
+
+        axios.post('http://localhost:5000/login', {
             email: userEmail,
             password: userPassword
-        }
-
-        fetch('http://localhost:5000/login', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(userData)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+            .then(function (response) {
+                console.log(response)
             })
+            .catch(function (error) {
+                console.log(error)
+            })
+
     }
 
 
