@@ -19,7 +19,7 @@ const Signup = () => {
             password: userPassword
         }
 
-        fetch('http://localhost:5000/userdata', {
+        fetch('http://localhost:5000/signup', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -7,9 +7,25 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        const email = data.email
-        const password = data.password
-        console.log(email, password)
+        const userEmail = data.email
+        const userPassword = data.password
+
+        const userData = {
+            email: userEmail,
+            password: userPassword
+        }
+
+        fetch('http://localhost:5000/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
 
 
