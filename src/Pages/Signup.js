@@ -8,10 +8,28 @@ const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        const email = data.email
-        const phoneNumber = data.phone
-        const password = data.password
-        console.log(email, phoneNumber, password)
+        const userEmail = data.email
+        const userPhoneNumber = data.phone
+        const userPassword = data.password
+
+
+        const userData = {
+            email: userEmail,
+            phoneNumber: userPhoneNumber,
+            password: userPassword
+        }
+
+        fetch('http://localhost:5000/userdata', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
 
 
