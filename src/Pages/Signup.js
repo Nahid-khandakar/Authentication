@@ -7,13 +7,16 @@ const Signup = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const onSubmit = () => {
-        console.log('hello')
+    const onSubmit = (data) => {
+        const email = data.email
+        const phoneNumber = data.phone
+        const password = data.password
+        console.log(email, phoneNumber, password)
     }
 
 
     return (
-        <div className="flex items-center justify-center mt-24">
+        <div className="flex items-center justify-center mt-20">
 
 
             <div className="w-full max-w-md">
@@ -53,7 +56,7 @@ const Signup = () => {
                             })}
                         />
 
-                        <div className='text-left text-red-700 ml-2 mt-1'>
+                        <div className='text-left text-red-700 ml-2 mt-1 text-sm'>
                             {errors.email?.type === "required" && <span>{errors.email.message}</span>}
                             {errors.email?.type === "pattern" && <span>{errors.email.message}</span>}
                         </div>
@@ -127,7 +130,7 @@ const Signup = () => {
                     </div>
 
                     {/* go to login page */}
-                    <div className="text-blue-500 text-right mb-10">
+                    <div className="text-blue-500 text-right mt-2 mb-8">
                         <Link to="/login">Already Have an Account</Link>
                     </div>
 
