@@ -20,7 +20,7 @@ const CreateCandidate = () => {
         axios.post('http://localhost:5000/create', {
             name: inputName,
             address: inputAddress,
-            birthDate: inputBirth,
+            birth: inputBirth,
             state: inputState,
             age: inputAge,
             pin: inputPin
@@ -81,7 +81,7 @@ const CreateCandidate = () => {
                         <div className="w-full md:w-1/2 flex flex-col">
                             <label className="text-left mx-9 ">Date of Birth</label>
                             <input
-                                type="text"
+                                type="date"
                                 className="py-3 mx-8 rounded border-2 bg-gray-300"
                                 placeholder='enter your date of birth'
                                 name='birth'
