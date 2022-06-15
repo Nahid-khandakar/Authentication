@@ -1,8 +1,31 @@
 import React from 'react';
+import { MdDelete } from 'react-icons/md';
+import { GrEdit } from 'react-icons/gr';
+import axios from 'axios';
+
 
 const CandidateTable = ({ user, index }) => {
-    return (
 
+    const handleEdit = (data) => {
+        console.log(data)
+    }
+
+    const handleDelete = (data) => {
+        const id = user._id
+        console.log(id)
+
+        axios.delete(`http://localhost:5000/userinfo/${id}`, {
+        })
+            .then(function (response) {
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+
+    }
+
+    return (
 
         <tr>
             <td class='p-2'>
@@ -25,15 +48,17 @@ const CandidateTable = ({ user, index }) => {
 
             <td class="p-2">
                 <div class="flex justify-center">
-                    <button>
-                        <svg class="w-8 h-8 hover:text-red-600 rounded-full hover:bg-gray-100 p-1"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
-                            </path>
-                        </svg>
+
+
+                    <button onClick={() => handleEdit(user)} className="text-lg pt-1 rounded-full hover:bg-gray-100 py-1 px-2">
+                        <GrEdit />
                     </button>
+
+
+                    <button onClick={() => handleDelete(user)} className="text-xl rounded-full hover:bg-gray-100 py-1 px-2">
+                        <MdDelete />
+                    </button>
+
                 </div>
             </td>
 
