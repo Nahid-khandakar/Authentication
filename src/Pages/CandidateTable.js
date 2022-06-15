@@ -1,15 +1,11 @@
 import { MdDelete } from 'react-icons/md';
 import { GrEdit } from 'react-icons/gr';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const CandidateTable = ({ user, index }) => {
 
-
-
-    const handleEdit = (data) => {
-        console.log(data)
-    }
 
     const handleDelete = (data) => {
         const id = user._id
@@ -52,9 +48,9 @@ const CandidateTable = ({ user, index }) => {
                 <div class="flex justify-center">
 
 
-                    <button onClick={() => handleEdit(user)} className="text-lg pt-1 rounded-full hover:bg-gray-100 py-1 px-2">
+                    <Link to={`update/${user._id}`} className="text-lg pt-2 rounded-full hover:bg-gray-100 py-1 px-2">
                         <GrEdit />
-                    </button>
+                    </Link>
 
 
                     <button onClick={() => handleDelete(user)} className="text-xl rounded-full hover:bg-gray-100 py-1 px-2">

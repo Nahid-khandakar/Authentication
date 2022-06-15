@@ -6,6 +6,7 @@ import Login from "./Pages/Login";
 import Signup from './Pages/Signup';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UpdateCandidate from "./Pages/UpdateCandidate";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup></Signup>}></Route>
 
         <Route path="/createcandidate" element={<CreateCandidate></CreateCandidate>}></Route>
+        <Route path='/update/:id' element={<UpdateCandidate></UpdateCandidate>}></Route>
       </Routes>
 
       <ToastContainer />
