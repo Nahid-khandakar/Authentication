@@ -26,26 +26,26 @@ const CandidateTable = ({ user, index }) => {
     return (
 
         <tr>
-            <td class='p-2'>
+            <td className='p-2'>
                 {index + 1}
             </td>
 
-            <td class="p-2">
+            <td className="p-2">
 
-                <h1 class="font-medium text-gray-800 text-left">{user.name}</h1>
+                <h1 className="font-medium text-gray-800 text-left">{user.name}</h1>
 
             </td>
 
-            <td class="p-2">
-                <div class="text-left">{user?.birthDate}</div>
+            <td className="p-2">
+                <div className="text-left">{user?.birthDate}</div>
             </td>
 
-            <td class="p-2">
-                <div class="text-left font-medium">{user.state}</div>
+            <td className="p-2">
+                <div className="text-left font-medium">{user.state}</div>
             </td>
 
-            <td class="p-2">
-                <div class="flex justify-center">
+            <td className="p-2">
+                <div className="flex justify-center">
 
 
                     <Link to={`update/${user._id}`} className="text-lg pt-2 rounded-full hover:bg-gray-100 py-1 px-2">

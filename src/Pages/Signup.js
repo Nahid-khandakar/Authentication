@@ -1,11 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
 
-
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
@@ -20,11 +21,20 @@ const Signup = () => {
             password: userPassword
         })
             .then(function (response) {
-                console.log(response)
+
                 reset()
+                if (response.status === 200) {
+                    toast.success('Sign up complete')
+                    navigate('../home', { replace: true })
+                }
+
             })
             .catch(function (error) {
                 console.log(error)
+                if (error.response.status === 409) {
+                    toast.error('This email already use')
+                }
+
             })
 
     }

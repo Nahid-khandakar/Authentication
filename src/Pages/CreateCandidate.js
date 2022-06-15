@@ -136,7 +136,7 @@ const CreateCandidate = () => {
 
 
                     <div className='flex justify-end mr-4 mt-10'>
-                        <Link to="/" className="w-32 px-4 py-3 mx-5 rounded text-zinc-900 inline-block shadow-lg
+                        <Link to="/home" className="w-32 px-4 py-3 mx-5 rounded text-zinc-900 inline-block shadow-lg
                         bg-gray-200 hover:bg-blue-400 border border-blue-600 ">Cancel</Link>
 
                         <input className="w-32 px-4 py-3 mx-5 rounded text-zinc-900 inline-block shadow-lg

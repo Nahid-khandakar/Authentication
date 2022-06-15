@@ -1,10 +1,14 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
+
 
 const Login = () => {
 
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
@@ -18,9 +22,19 @@ const Login = () => {
         })
             .then(function (response) {
                 console.log(response)
+                console.log(response.status)
+                if (response.status === 200) {
+                    toast.success('Successfully login')
+                    navigate('../home', { replace: true })
+
+                }
             })
             .catch(function (error) {
                 console.log(error)
+                if (error.response.status === 403) {
+                    toast.error('Wrong Email or Password')
+                }
+
             })
 
     }
