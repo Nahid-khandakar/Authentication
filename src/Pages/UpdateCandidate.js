@@ -31,7 +31,7 @@ const UpdateCandidate = () => {
         })
             .then(function (response) {
                 console.log(response)
-                toast.success('Candidate add to the database')
+                toast.success('Successfully update candidate data')
                 event.target.reset()
                 window.location.reload()
 
@@ -46,7 +46,7 @@ const UpdateCandidate = () => {
         <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 my-14">
             <div className=" bg-gray-300 rounded-lg">
 
-                <p className="text-3xl font-semibold text-left text-zinc-900  mx-9 pt-4 ">Create Candidate</p>
+                <p className="text-3xl font-semibold text-left text-zinc-900  mx-9 pt-4 ">Update Candidate</p>
 
                 <form className='pb-14' onSubmit={handleForm}>
 
@@ -142,7 +142,7 @@ const UpdateCandidate = () => {
                         bg-gray-200 hover:bg-blue-400 border border-blue-600 ">Cancel</Link>
 
                         <input className="w-32 px-4 py-3 mx-5 rounded text-zinc-900 inline-block shadow-lg
-                        bg-gray-200 hover:bg-blue-400 border border-blue-600 " type="submit" value="Create" />
+                        bg-gray-200 hover:bg-blue-400 border border-blue-600 " type="submit" value="Update" />
                     </div>
 
                 </form>
