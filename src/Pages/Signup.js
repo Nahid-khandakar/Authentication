@@ -21,7 +21,7 @@ const Signup = () => {
             password: userPassword
         })
             .then(function (response) {
-
+                console.log(response)
                 reset()
                 if (response.status === 200) {
                     toast.success('Sign up complete')

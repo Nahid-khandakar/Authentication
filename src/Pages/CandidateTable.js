@@ -48,7 +48,7 @@ const CandidateTable = ({ user, index }) => {
                 <div className="flex justify-center">
 
 
-                    <Link to={`update/${user._id}`} className="text-lg pt-2 rounded-full hover:bg-gray-100 py-1 px-2">
+                    <Link to={`/update/${user._id}`} className="text-lg pt-2 rounded-full hover:bg-gray-100 py-1 px-2">
                         <GrEdit />
                     </Link>
 
