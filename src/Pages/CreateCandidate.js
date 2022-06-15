@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const CreateCandidate = () => {
 
@@ -27,6 +28,9 @@ const CreateCandidate = () => {
         })
             .then(function (response) {
                 console.log(response)
+                toast.success('Candidate add to the database')
+                event.target.reset()
+                window.location.reload()
 
             })
             .catch(function (error) {
@@ -133,10 +137,10 @@ const CreateCandidate = () => {
 
                     <div className='flex justify-end mr-4 mt-10'>
                         <Link to="/" className="w-32 px-4 py-3 mx-5 rounded text-zinc-900 inline-block shadow-lg
-                        bg-gray-200 hover:bg-blue-500 border border-blue-600 ">Cancel</Link>
+                        bg-gray-200 hover:bg-blue-400 border border-blue-600 ">Cancel</Link>
 
                         <input className="w-32 px-4 py-3 mx-5 rounded text-zinc-900 inline-block shadow-lg
-                        bg-gray-200 hover:bg-blue-500 border border-blue-600 " type="submit" value="Sign Up" />
+                        bg-gray-200 hover:bg-blue-400 border border-blue-600 " type="submit" value="Create" />
                     </div>
 
                 </form>

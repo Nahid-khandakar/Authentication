@@ -1,10 +1,11 @@
-import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import { GrEdit } from 'react-icons/gr';
 import axios from 'axios';
 
 
 const CandidateTable = ({ user, index }) => {
+
+
 
     const handleEdit = (data) => {
         console.log(data)
@@ -18,6 +19,7 @@ const CandidateTable = ({ user, index }) => {
         })
             .then(function (response) {
                 console.log(response)
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error)
