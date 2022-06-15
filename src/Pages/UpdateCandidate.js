@@ -21,7 +21,7 @@ const UpdateCandidate = () => {
         console.log(inputName, inputAddress, inputBirth, inputState, inputAge, inputPin)
 
 
-        axios.put(`http://localhost:5000/userinfo/${id}`, {
+        axios.put(`https://immense-badlands-37907.herokuapp.com/userinfo/${id}`, {
             name: inputName,
             address: inputAddress,
             birth: inputBirth,

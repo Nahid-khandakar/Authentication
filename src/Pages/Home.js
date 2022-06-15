@@ -8,7 +8,7 @@ const Home = () => {
     const [userInfo, setUserInfo] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/userinfo')
+        fetch('https://immense-badlands-37907.herokuapp.com/userinfo')
             .then(res => res.json())
             .then(data => {
                 console.log(data)

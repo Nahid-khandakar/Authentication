@@ -11,7 +11,7 @@ const CandidateTable = ({ user, index }) => {
         const id = user._id
         console.log(id)
 
-        axios.delete(`http://localhost:5000/userinfo/${id}`, {
+        axios.delete(`https://immense-badlands-37907.herokuapp.com/userinfo/${id}`, {
         })
             .then(function (response) {
                 console.log(response)

@@ -18,7 +18,7 @@ const CreateCandidate = () => {
         console.log(inputName, inputAddress, inputBirth, inputState, inputAge, inputPin)
 
 
-        axios.post('http://localhost:5000/create', {
+        axios.post('https://immense-badlands-37907.herokuapp.com/create', {
             name: inputName,
             address: inputAddress,
             birth: inputBirth,

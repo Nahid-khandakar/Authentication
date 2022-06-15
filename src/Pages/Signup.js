@@ -15,7 +15,7 @@ const Signup = () => {
         const userPassword = data.password
 
 
-        axios.post('http://localhost:5000/signup', {
+        axios.post('https://immense-badlands-37907.herokuapp.com/signup', {
             email: userEmail,
             phoneNumber: userPhoneNumber,
             password: userPassword
